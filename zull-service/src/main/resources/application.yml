@@ -1,0 +1,55 @@
+zuul:
+  prefix: /api
+  routes:
+    db-service:
+      path: /db-service/**
+      serviceId: DB-SERVICE
+    stock-service:
+      path: /stock-service/**
+      serviceId: STOCK-SERVICE
+    projectTask-service:
+       path: /projectTask-service/**
+       serviceId: PROJECTTASK-SERVICE
+    security-service:
+       path: /security-service/**
+       serviceId: SECURITY-SERVICE
+    
+        
+      
+eureka:
+  client:
+     register-with-eureka: true
+     fetch-registry: true
+     service-url:
+      defaultZone: http://localhost:8888/eureka/
+  instance:
+       hostname: localhost
+ 
+            
+server:
+  port: 8056
+  
+spring:
+  application:
+    name: zuul-service
+
+
+       
+hystrix:
+   command:
+     sdefault:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000    
+
+
+  
+ 
+    
+    
+
+    
+    
+  
+  
