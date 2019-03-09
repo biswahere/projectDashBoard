@@ -24,6 +24,7 @@ eureka:
       defaultZone: http://localhost:8888/eureka/
   instance:
        hostname: localhost
+       name: eureka-service
  
             
 server:
