@@ -1,4 +1,4 @@
-package com.techprimers.stock.resource;
+/*package com.techprimers.stock.resource;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -67,3 +67,4 @@ public class DbServiceResource {
 	}
 	}
 
+*/
