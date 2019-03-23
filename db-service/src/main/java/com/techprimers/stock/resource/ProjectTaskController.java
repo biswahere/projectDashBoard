@@ -51,15 +51,13 @@ public class ProjectTaskController {
 	
 	@GetMapping("/getProjectTask/{pt_id}")
 	public ProjectTask getProjectTask(@PathVariable Long pt_id) {
-		System.out.println("db service"+pt_id);
+		
 		return this.projectTaskService.getProjectTask(pt_id);
 		
 	}
 	
 	@DeleteMapping("/{pt_id}")
     public ResponseEntity<?> deleteProjectTask(@PathVariable Long pt_id){
-		
-		System.out.println("Delete....."+pt_id);
 		this.projectTaskService.delete(pt_id);
         return new ResponseEntity<String>("Project Task deleted", HttpStatus.OK);
     }
