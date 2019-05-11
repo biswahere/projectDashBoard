@@ -3,18 +3,34 @@ package com.biswatech.project.model;
 import java.util.Date;
 
 
+//import javax.persistence.Column;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+
 
 public class Project {
 	
 	private Long id;
+	@NotBlank(message = "Project name can not be blank")
 	private String projectName;
+	@NotBlank(message = "Project Identifier is required")
+	@Size(min=4, max=5, message ="Please use atleast 4 character and atmost 5 character")
+	//@Column(updatable = false, unique = true)
 	private String projectIdentifier;
+	@NotBlank(message = "Description is required")
 	private String description;
+	@JsonFormat(pattern = "yyyy-mm-dd")
 	private Date start_date;
+	@JsonFormat(pattern = "yyyy-mm-dd")
 	private Date end_date;
 	
 	
 	private Date created_At;
+	
+	@JsonFormat(pattern = "yyyy-mm-dd")
 	private Date updated_At;
 	
 	public Project() {

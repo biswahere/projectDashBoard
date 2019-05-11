@@ -3,9 +3,9 @@ spring:
     name: project-service
 
 server:
-  port: 8308
-
-
+  port: 8306
+  
+  
 eureka:
   client:
      register-with-eureka: true
@@ -15,3 +15,5 @@ eureka:
       instance:
        hostname: localhost
        name: eureka-service
+       
+       
