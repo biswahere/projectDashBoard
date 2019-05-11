@@ -2,12 +2,19 @@ package com.techprimers.stock.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 
 @Entity
 public class Project {
@@ -15,14 +22,27 @@ public class Project {
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Long id;
+	
+	//@NotBlank(message = "Project name can not be blank")
 	private String projectName;
+	
+	//@NotBlank(message = "Project Identifier is required")
+	//@Size(min=4, max=5, message ="Please use atleast 4 character and atmost 5 character")
+	@Column(updatable = false, unique = true)
 	private String projectIdentifier;
+	
+	//@NotBlank(message = "Description is required")
 	private String description;
+	
+	//@JsonFormat(pattern = "yyyy-mm-dd")
 	private Date start_date;
+	
+	//@JsonFormat(pattern = "yyyy-mm-dd")
 	private Date end_date;
 	
-	
 	private Date created_At;
+	
+	//@JsonFormat(pattern = "yyyy-mm-dd")
 	private Date updated_At;
 	
 	public Project() {

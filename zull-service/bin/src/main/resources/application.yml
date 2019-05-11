@@ -13,6 +13,9 @@ zuul:
     security-service:
        path: /security-service/**
        serviceId: SECURITY-SERVICE
+    project-service:
+       path: /project-service/**
+       serviceId: PROJECT-SERVICE   
     
         
       
@@ -36,14 +39,15 @@ spring:
 
 
        
+
+             
 hystrix:
-   command:
-     sdefault:
+  command:
+    simple-client:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 3000    
-
+            timeoutInMilliseconds : 110000
 
   
  

@@ -7,3 +7,9 @@ eureka:
       instance:
        hostname: localhost
        name: eureka-service
+      
+ spring:
+  jackson:
+    serialization:
+        FAIL_ON_EMPTY_BEANS : false      
+       
