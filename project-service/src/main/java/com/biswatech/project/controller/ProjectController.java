@@ -39,7 +39,8 @@ public class ProjectController {
 		
 		ResponseEntity<?> errorMap = mapValidationErrorService.mapValidationErrorService(result);
 		if(errorMap != null) return errorMap;
-				
+		System.out.println("jhhgfgfgcfgcfgcvg ");
+	
 		return this.dbServiceProxyforProjectService.createNewProject(project);
 		
 	}
