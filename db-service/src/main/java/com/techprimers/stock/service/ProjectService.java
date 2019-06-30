@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import com.techprimers.stock.model.Project;
 import com.techprimers.stock.repository.ProjectRepository;
 
+import exceptions.ProjectIdException;
+
 @Service
 public class ProjectService {
 	
@@ -22,11 +24,18 @@ public class ProjectService {
 		return projectRepository.save(project);
 	}
 
-	public Project findById(Long id) {
-		
-		return projectRepository.getOne(id);
-	}
+	
+	public Project findById(String id) {
+	
+		Project project = projectRepository.findByProjectIdentifier(id);
+		System.out.println(project);
+		if(project == null){
+            throw new ProjectIdException("Project ID '"+id+"' does not exist");
 
+        }
+		return project;
+	}
+	
 	public List<Project> findAllProjects() {
 		
 		return projectRepository.findAll();

@@ -41,7 +41,7 @@ public class ProjectController {
 	}
 	
 	@GetMapping("/fetchProject/{id}")
-	public Project fetchProject(@PathVariable Long id ) {
+	public Project fetchProject(@PathVariable String id ) {
 		
 		System.out.println("id"+id);
 		return projectService.findById(id);
