@@ -46,7 +46,7 @@ public class ProjectController {
 	}
 	
 	@GetMapping("/project/{id}")
-	public Project findProjectById(@PathVariable Long id){
+	public Project findProjectById(@PathVariable String id){
 		
 		return dbServiceProxyforProjectService.fetchProject(id);
 		

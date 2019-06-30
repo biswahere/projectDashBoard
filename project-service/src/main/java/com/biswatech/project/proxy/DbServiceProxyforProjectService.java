@@ -23,7 +23,7 @@ public interface DbServiceProxyforProjectService {
 	
 
 	@GetMapping("/api/project/fetchProject/{id}")
-	public Project fetchProject( @PathVariable Long id);
+	public Project fetchProject( @PathVariable String id);
 	
 	@GetMapping("/api/project/fetchProjectList")
 	public List<Project> getAllProjects();
